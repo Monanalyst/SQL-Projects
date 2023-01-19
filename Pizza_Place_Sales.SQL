@@ -17,7 +17,7 @@ ON order_details.pizza_id = pizzas.pizza_id;
 
 -- How many orders were made each day?
 
-SELECT Day_Of_Week, SUM(Num_Of_Orders ) AS Day_Name
+SELECT Day_Of_Week, SUM(Num_Of_Orders) AS Day_Name
 FROM
 (SELECT DATENAME(weekday, orders.date) AS Day_Of_Week, COUNT(*) AS Num_Of_Orders 
 FROM orders 
@@ -91,7 +91,7 @@ ORDER BY COUNT(*) DESC;
 
 -- What is the least ordered pizza type?
 
-SELECT DISTINCT pizza_types.name, COUNT(*) AS Order_Num
+SELECT pizza_types.name, COUNT(*) AS Order_Num
 FROM order_details 
 JOIN pizzas 
 ON order_details.pizza_id = pizzas.pizza_id
@@ -102,7 +102,7 @@ ORDER BY COUNT(*) ASC;
 
 -- What pizza category had the most orders?
 
-SELECT DISTINCT pizza_types.category, COUNT(*) AS Order_Num
+SELECT pizza_types.category, COUNT(*) AS Order_Num
 FROM order_details 
 JOIN pizzas 
 ON order_details.pizza_id = pizzas.pizza_id
